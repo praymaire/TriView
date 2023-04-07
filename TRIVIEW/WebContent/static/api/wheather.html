@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script src="../js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+	let weatherIcon = {
+			'01' : 'fas fa-sun',
+			'02' : 'fas fa-cloud-sun',
+			'03' : 'fas fa-cloud',
+			'04' : 'fas fa-cloud-meatball',
+			'09' : 'fas fa-cloud-sun-rain',
+			'10' : 'fas fa-cloud-showers-heavy',
+			'11' : 'fas fa-poo-storm',
+			'13' : 'far fa-snowflake',
+			'50' : 'fas fa-smog'
+			};
+
+			
+	$.ajax({
+		url:'http://api.openweathermap.org/data/2.5/weather?q=Seoul&APPID=c679b8df9843148dacf1b37a83bc6e3b&units=metric',
+		dataType:'json',
+		type:'GET',
+		success:function(data){
+        var $Icon = (data.weather[0].icon);
+		var $Temp = Math.floor(data.main.temp) + 'º';
+		var $city = data.name;
+
+		$('.CurrIcon').append('http://api.openweathermap.org/img/wn/'+$Icon+'@2x.png');
+		$('.CurrTemp').prepend($Temp);
+		$('.City').append($city);
+		}
+		})
+		});
+</script>
+
+</head>
+<body>
+<div class="weather">
+<div class="CurrIcon"></div>
+<div class="CurrTemp"></div>
+<div class="City"></div>
+</div>
+
+</body>
+</html>
