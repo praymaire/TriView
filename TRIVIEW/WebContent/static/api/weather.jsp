@@ -10,7 +10,7 @@
 $(document).ready(function() {
 
 $.ajax({
-url:'http://api.openweathermap.org/data/2.5/weather?q=seoul&APPID=c679b8df9843148dacf1b37a83bc6e3b&units=metric',
+url:'http://api.openweathermap.org/data/2.5/weather?q=seoul&APPID=&units=metric',
 dataType:'json',
 type:'GET',
 success:function(data){
