@@ -63,7 +63,7 @@
 
 # Project Structure
 
-model2 구조로 개발했으며, 회원 기능과 게시판 CRUD를 구현했습니다.
+model1 구조로 개발했으며, 회원 기능과 게시판 CRUD를 구현했습니다.
 
 > 개발언어 
 
